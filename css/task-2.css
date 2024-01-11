@@ -1,21 +1,3 @@
-/* .list-item {
-  list-style-type: none;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 48px 24px;
-}
-
-.img-item {
-  width: 360px;
-  height: 300px;
-} */
-
-
 ul {
   list-style-type: none;
   padding-left: 0;
