@@ -28,26 +28,45 @@ const images = [
   },
 ];
 
-const galleryContainer = document.querySelector('.gallery');
+// const galleryContainer = document.querySelector('.gallery');
 
-const createGalleryItem = ({ url, alt }) => {
-  const galleryItem = document.createElement('li');
-  galleryItem.classList.add('gallery-item');
+// const createGalleryItem = ({ url, alt }) => {
+//   const galleryItem = document.createElement('li');
+//   galleryItem.classList.add('gallery-item');
 
-  const image = document.createElement('img');
-  image.src = url;
-  image.alt = alt;
-  image.classList.add('gallery-image');
+//   const image = document.createElement('img');
+//   image.src = url;
+//   image.alt = alt;
+//   image.classList.add('gallery-image');
 
-  galleryItem.appendChild(image);
+//   galleryItem.appendChild(image);
 
-  return galleryItem;
-};
+//   return galleryItem;
+// };
 
-const appendGalleryToDOM = (container, items) => {
-  container.append(...items);
-};
+// const appendGalleryToDOM = (container, items) => {
+//   container.append(...items);
+// };
 
-const galleryItems = images.map(createGalleryItem);
+// const galleryItems = images.map(createGalleryItem);
 
-appendGalleryToDOM(galleryContainer, galleryItems);
+// appendGalleryToDOM(galleryContainer, galleryItems);
+
+ 
+// const gallery = document.querySelector('.gallery');
+
+// const list = images
+//   .map((image) => `<li class="list-item "><img class="img-item" src="${image.url}" alt="${image.alt}"></li>`)
+//   .join("");
+
+// gallery.insertAdjacentHTML("beforeend", list);
+
+
+const gallery = document.querySelector('.gallery');
+
+const createMarkup = ({ url, alt }) =>
+  `<li class="gallery-item">
+    <img src="${url}" alt="${alt}" width="360" height="300" />
+  </li>`;
+const markup = images.map(createMarkup).join('');
+gallery.insertAdjacentHTML('beforeend', markup);
